@@ -1,21 +1,12 @@
 import { merge } from "lodash";
-
+import { VERIFY_USER_INFO} from '../actions/user_actions'
 const usersReducer = (state = {}, action) => {
   Object.freeze(state);
   switch (action.type) {
-    // case RECEIVE_USER:
-    //   let result = merge({}, state);
-    //   result[action.user._id] = action.user;
-    //   return result;
-    // case RECEIVE_USERS:
-    //   return merge(
-    //     {},
-    //     state,
-    //     action.users.reduce((pojo, pin) => {
-    //       pojo[pin._id] = pin;
-    //       return pojo;
-    //     }, {})
-    //   );
+    case VERIFY_USER_INFO:
+      let result = merge({}, state, action.info);
+      return result;
+    
     default:
       return state;
   }
