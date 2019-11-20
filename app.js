@@ -9,6 +9,12 @@ app.use(
     extended: true,
   })
 )
+// im not sure how postgres will function when connected to express/node
+// seeing under it seems cors wouldn't be needed but i put it here just in case 
+// it requires an addition field after a single http link base
+// const cors = require("cors");
+// app.use(cors());
+
 
 app.get("/", (req, res) => {
   res.json({ info: "Node.js, Express, and Postgres API" });
